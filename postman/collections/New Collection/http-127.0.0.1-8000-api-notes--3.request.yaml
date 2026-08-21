@@ -1,0 +1,9 @@
+$kind: http-request
+name: http://127.0.0.1:8000/api/notes/
+description: ""
+url: http://127.0.0.1:8000/api/notes/
+method: POST
+body:
+  type: json
+  content: ""
+order: 3000

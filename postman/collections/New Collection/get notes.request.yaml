@@ -1,0 +1,19 @@
+$kind: http-request
+name: get notes
+description: ""
+url: http://127.0.0.1:8000/api/notes/
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"title\":\"fullstack\",\r
+
+    \    \"content\":\"react\"\r
+
+    }"
+auth:
+  type: bearer
+  credentials:
+    token: "{{supabase_service_role_api_key_11f6}}"
+order: 2000
