@@ -1,0 +1,125 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+
+# =========================
+# Django
+# =========================
+*.log
+*.pot
+*.pyc
+
+db.sqlite3
+db.sqlite3-journal
+
+media/
+staticfiles/
+
+local_settings.py
+
+
+# =========================
+# Django Migrations
+# Ignore only __pycache__ inside migrations
+# =========================
+*/migrations/__pycache__/
+
+
+# Uncomment this only if you want to ignore ALL migrations
+# */migrations/
+
+
+# =========================
+# Environment Variables
+# =========================
+.env
+
+
+# =========================
+# Virtual Environments
+# =========================
+venv/
+ENV/
+env/
+.venv/
+
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+*.sublime-workspace
+*.sublime-project
+
+
+# =========================
+# System Files
+# =========================
+.DS_Store
+Thumbs.db
+
+
+# =========================
+# Coverage / Testing
+# =========================
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+htmlcov/
+
+
+# =========================
+# PyCharm
+# =========================
+*.iml
+*.ipr
+*.iws
+
+
+# =========================
+# MyPy
+# =========================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+
+# =========================
+# Pytest
+# =========================
+.cache/
+.pytest_cache/
+
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+
+# =========================
+# Other Temporary Files
+# =========================
+*.bak
+*.swp
+*.tmp
