@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os 
+import dj_database_url
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +30,7 @@ SECRET_KEY = 'django-insecure-9f8d4%(a@^^&(rka)4b*o!is)=q3bqny_23d464ms@ar$a52*s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -88,17 +92,24 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'notes',
-        'USER': 'root',
-        'PASSWORD':'123456',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'notes',
+#         'USER': 'root',
+#         'PASSWORD':'123456',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
+DATABASES={ 
+    "default": dj_database_url.config( 
+        default=os.getenv("DATABASE_URL"), 
+        conn_max_age=600, 
+        ssl_require=True # Render PostgreSQL requires SSL 
+        ) 
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
@@ -158,6 +169,8 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
+CORS_ALLOW_ALL_ORIGINS= True 
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:5173","https://note-phi-dun.vercel.app/"
 ]
