@@ -205,10 +205,9 @@ SECRET_KEY = os.getenv(
     "django-insecure-9f8d4%(a@^^&(rka)4b*o!is)=q3bqny_23d464ms@ar$a52*s"
 )
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -275,7 +274,8 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 DATABASES = {
     "default": dj_database_url.config(
         default=os.getenv("DATABASE_URL"),
-        conn_max_age=600,
+        conn_max_age=0,
+        conn_health_checks=True,
         ssl_require=True,
     )
 }
