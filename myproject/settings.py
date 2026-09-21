@@ -342,7 +342,7 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://note-phi-dun.vercel.app",
-    "https://note-38lhhqtd6-project-vaishu.vercel.app/"
+    "https://note-38lhhqtd6-project-vaishu.vercel.app"
 ]
 
 
